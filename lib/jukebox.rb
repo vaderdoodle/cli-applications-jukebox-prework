@@ -52,15 +52,30 @@ def exit_jukebox
   puts "Goodbye"
 end
 
-def run 
+def run(songs)
 help
 puts"Please enter a command:"
 command = gets.chomp
 
   while command != "exit" do
-    "puts we are in motion"
+    if command == "help"
+      help
+      puts "Please enter a command:"
+      command = gets.chomp
+    elsif command == "list"
+      list(songs)
+      puts "Please enter a command:"
+      command = gets.chomp
+    elsif command == "play"
+      play(songs)
+      puts "Please enter a command:"
+      command = gets.chomp
+    else
+      puts "Invalid input, please try again"
+      puts "Please enter a command:"
+      command = gets.chomp
+    end
   end
-  if command == "exit"
-    exit_jukebox
-  end
+  
+  exit_jukebox
 end 
