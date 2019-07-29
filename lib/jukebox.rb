@@ -60,4 +60,7 @@ command = gets.chomp
   while command != "exit" do
     "puts we are in motion"
   end
+  if command == "exit"
+    exit_jukebox
+  end
 end 
